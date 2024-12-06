@@ -1,0 +1,299 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.skip-link {
+    position: absolute;
+    top: -9999px; 
+    left: 45%;
+    transition : top 0.3s ease; 
+    border-radius: 0 0 10px 10px;
+}
+
+.skip-link:focus {
+    top: 0px;
+    background-color: #ffafaf;
+    padding: 10px;
+    border: 3px solid red;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.nav-links a:focus,
+.learn-more:focus {
+    border-radius: 5px;
+    border: 4px solid red;
+}
+
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+.navbar .logo span {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+.navbar .logo span::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 37%;
+    background-color: #008dd3;
+    bottom: 29%;
+    left: -4%;
+    z-index: -1;
+}
+.navbar .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+    background-color: aqua;
+    color: #fff;
+}
+.navbar .contact-btn {
+    background-color: #00aaff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    text-align: left;
+    padding: 50px 20px;
+    background-image: url('../images/milky-way.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin: 25px;
+    height: 50vh;
+    box-shadow: 0 0 15px 6px #edeeec2f;
+}
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+}
+.hero h1 span {
+    color: #00aaff;
+}
+.hero p:first-child {
+    font-size: 18px;
+    margin: 10px 0 0;
+    position: absolute;
+    bottom: 30% !important;
+    left: 20px;
+}
+.hero p {
+    font-size: 18px;
+    margin: 10px 0 0;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Locals section styles */
+.locals {
+    padding: 20px;
+}
+.locals h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.locals .planets {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: nowrap; 
+}
+.locals .planet {
+    text-align: center;
+    overflow: visible;
+}
+.locals .planet img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.locals .planet p {
+    margin: 10px 0 20px;
+    font-size: 18px;
+}
+.locals .planets .planet .learn-more {
+    display: block;
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 8px 17px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: transform ease 0.4s;
+    -webkit-transition: transform ease 0.4s;
+    -moz-transition: transform ease 0.4s;
+    -ms-transition: transform ease 0.4s;
+    -o-transition: transform ease 0.4s;
+}
+.blue-planet {
+    background-color: #00aaff !important;
+}
+
+.locals .planets .planet .learn-more:hover {
+   background-color: aqua !important;
+   color: #000;
+   transform: scale(1.3);
+   -webkit-transform: scale(1.3);
+   -moz-transform: scale(1.3);
+   -ms-transform: scale(1.3);
+   -o-transform: scale(1.3);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+footer a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) and (max-width: 812px) {
+    .locals .planet .learn-more {
+        font-size: 12px!important;
+    }
+}
+@media (max-width: 768px) {
+        .navbar {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .navbar .nav-container {
+        width: 100%; 
+        flex-direction: column; 
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+
+    .locals .planets{
+        flex-wrap: wrap;
+    }
+    .locals .planet {
+        width: 27%;
+        /* margin: 10px; */
+    }
+    .locals .planet img {
+        width: 120px;
+        height: 120px;
+    }
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .navbar .nav-container {
+        width: 100%; 
+        flex-direction: column; 
+        gap: 5px;
+    }
+    .hero-text{
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+    .locals .planets {
+        flex-wrap: wrap; 
+    }
+    .locals .planet {
+        width: 60%; 
+        /* margin: 5px; */
+    }
+    .locals .planet img {
+        width: 140px;
+        height: 140px;
+    }
+    footer {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 390px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 4px;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        width: 100%;
+    }
+    .navbar .nav-links a {
+        padding: 8px;
+        width: 90%;
+        text-align: center;
+        font-size: 14px;
+    }
+    .navbar .contact-btn {
+        width: 90%;
+        text-align: center;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    .hero-text{
+        text-align: center;
+    }
+}
